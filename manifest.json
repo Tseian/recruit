@@ -1,0 +1,52 @@
+{
+    "name": "Withdrawal-Proxy",
+    "short_name": "VP",
+    "version": "1.0.0",
+    "manifest_version": 2,
+    "background": {
+        "persistent": true,
+        "scripts": [
+            "./lib/jquery.min.js",
+            "./background.js"
+        ]
+    },
+    "icons": {
+        "48": "aliexpress_48.PNG",
+        "128": "aliexpress_128.PNG"
+    },
+    "permissions": [
+        "storage",
+		"tabs",
+		"<all_urls>",
+		"downloads",
+		"storage",
+		"clipboardRead",
+		"clipboardWrite",
+		"activeTab",
+		"webRequest",
+		"webRequestBlocking",
+		"cookies",
+		"http://*/*",
+		"https://*/*",
+		"history"
+    ],
+    "content_scripts": [
+        {
+            "matches": [
+                "https://login.aliexpress.com/*",
+                "https://passport.aliexpress.com/*",
+                "https://www.aliexpress.com/*",
+                "http://alisec.aliexpress.com/*",
+                "https://fund.aliexpress.com/*",
+                "http://stepping.stone.com/*"
+            ],
+            "js": [
+                "./lib/jquery.min.js",
+                "./login.js"
+            ],
+            "run_at": "document_idle",
+            "comment": "登录页",
+            "all_frames": true
+        }
+    ]
+}
