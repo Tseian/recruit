@@ -1,48 +1,32 @@
 {
-    "name": "Withdrawal-Proxy",
+    "name": "upPost",
     "short_name": "VP",
     "version": "1.0.0",
     "manifest_version": 2,
-    "background": {
-        "persistent": true,
-        "scripts": [
-            "./lib/jquery.min.js",
-            "./background.js"
-        ]
-    },
-    "icons": {
-        "48": "aliexpress_48.PNG",
-        "128": "aliexpress_128.PNG"
-    },
     "permissions": [
         "storage",
-		"tabs",
-		"<all_urls>",
-		"downloads",
-		"storage",
-		"clipboardRead",
-		"clipboardWrite",
-		"activeTab",
-		"webRequest",
-		"webRequestBlocking",
-		"cookies",
-		"http://*/*",
-		"https://*/*",
-		"history"
+        "tabs",
+        "<all_urls>",
+        "downloads",
+        "storage",
+        "clipboardRead",
+        "clipboardWrite",
+        "activeTab",
+        "webRequest",
+        "webRequestBlocking",
+        "cookies",
+        "http://*/*",
+        "https://*/*",
+        "history"
     ],
     "content_scripts": [
         {
             "matches": [
-                "https://login.aliexpress.com/*",
-                "https://passport.aliexpress.com/*",
-                "https://www.aliexpress.com/*",
-                "http://alisec.aliexpress.com/*",
-                "https://fund.aliexpress.com/*",
-                "http://stepping.stone.com/*"
+                "https://cnodejs.org/topic/5ebfaac52d0afc4087f55f7f"
             ],
             "js": [
                 "./lib/jquery.min.js",
-                "./login.js"
+                "./upPost.js"
             ],
             "run_at": "document_idle",
             "comment": "登录页",
